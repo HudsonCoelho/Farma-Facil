@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar Estoque - Farma Fácil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estoque.css">
+</head>
+<body>
+     <!-- MENU TOPO -->
+    <div class="topbar menu-full-width">
+        <div class="container">
+            <nav class="main-menu">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Solicitar Medicamentos</a>
+                <a href="acompanharpedido.html">Acompanhar Pedido</a>
+                <a href="noticias.html">Notícias</a>
+                <a href="estoques.html">Estoques de Medicamentos</a>
+                <a href="telemedicina.html">Telemedicina</a>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="login-link" id="loginMenu">Entrar</a>
+                <a href="cadastro.html" class="register-link" id="cadastroMenu">Cadastrar</a>
+                <a href="#" class="logout-link" id="logoutMenu" onclick="logout()" style="display: none;">Sair</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+        <span class="logo-icon">⚕</span>
+        <span class="logo-text">Farma</span><span class="logo-highlight">Fácil</span>
+    </div>
+
+     <!-- BARRA DE PESQUISA - Com container -->
+    <div class="search-bar-modern-container">
+        <div class="container">
+            <form action="resultados.html" method="get">
+                <input type="text" name="q" placeholder="Buscar na Farma Fácil...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container">
+        <main class="estoque-main">
+            <div class="estoque-container">
+                <!-- Cabeçalho -->
+                <div class="estoque-header">
+                    <h1 class="estoque-title">Consultar Estoque de Medicamentos</h1>
+                    <p class="estoque-subtitle">Encontre os medicamentos disponíveis em nossas farmácias parceiras</p>
+                    <p class="estoque-descricao">Verifique a disponibilidade, preços e localização dos medicamentos em tempo real</p>
+                </div>
+
+             
+                <!-- Filtros Rápidos -->
+                <div class="filtros-rapidos">
+                    <a href="#" class="btn-filtro-rapido ativo">💊 Todos os Medicamentos</a>
+                    <a href="#" class="btn-filtro-rapido">😷 Analgésicos</a>
+                    <a href="#" class="btn-filtro-rapido">🦠 Antibióticos</a>
+                    <a href="#" class="btn-filtro-rapido">❤️ Pressão Arterial</a>
+                    <a href="#" class="btn-filtro-rapido">🩸 Diabetes</a>
+                </div>
+
+                <!-- Parceiros -->
+                <div class="parceiros-grid">
+                    <!-- SUS -->
+                    <div class="card-parceiro">
+                        <div class="parceiro-logo">🏥</div>
+                        <h3 class="parceiro-nome">SUS - Sistema Único de Saúde</h3>
+                        <p class="parceiro-descricao">Medicamentos gratuitos através do programa Farmácia Popular</p>
+                        
+                        <div class="parceiro-info">
+                            <div class="info-item">
+                                <span class="info-label">💊 Medicamentos:</span>
+                                <span class="info-valor">120+ disponíveis</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">💰 Preço:</span>
+                                <span class="info-valor">Gratuito</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">📍 Requisitos:</span>
+                                <span class="info-valor">Receita médica</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-ver-estoque">Ver Medicamentos Disponíveis</a>
+                    </div>
+
+                    <!-- Drogasil -->
+                    <div class="card-parceiro">
+                        <div class="parceiro-logo">💊</div>
+                        <h3 class="parceiro-nome">Drogasil</h3>
+                        <p class="parceiro-descricao">Rede de farmácias com entrega em todo o Brasil</p>
+                        
+                        <div class="parceiro-info">
+                            <div class="info-item">
+                                <span class="info-label">💊 Medicamentos:</span>
+                                <span class="info-valor">250+ disponíveis</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">💰 Entrega:</span>
+                                <span class="info-valor">Grátis acima de R$ 99</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">⏱️ Retirada:</span>
+                                <span class="info-valor">30 minutos</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-ver-estoque">Consultar Preços</a>
+                    </div>
+
+                    <!-- Drogaria Araujo -->
+                    <div class="card-parceiro">
+                        <div class="parceiro-logo">🏪</div>
+                        <h3 class="parceiro-nome">Drogaria Araujo</h3>
+                        <p class="parceiro-descricao">Tradição e confiança em medicamentos</p>
+                        
+                        <div class="parceiro-info">
+                            <div class="info-item">
+                                <span class="info-label">💊 Medicamentos:</span>
+                                <span class="info-valor">180+ disponíveis</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">🎯 Especialidade:</span>
+                                <span class="info-valor">Medicamentos controlados</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">📞 Atendimento:</span>
+                                <span class="info-valor">24 horas</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-ver-estoque">Ver Estoque</a>
+                    </div>
+
+                    <!-- Poupa Minas -->
+                    <div class="card-parceiro">
+                        <div class="parceiro-logo">⭐</div>
+                        <h3 class="parceiro-nome">Poupa Minas</h3>
+                        <p class="parceiro-descricao">Preços baixos e qualidade garantida</p>
+                        
+                        <div class="parceiro-info">
+                            <div class="info-item">
+                                <span class="info-label">💊 Medicamentos:</span>
+                                <span class="info-valor">200+ disponíveis</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">💰 Promoções:</span>
+                                <span class="info-valor">Todo dia</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">🎁 Descontos:</span>
+                                <span class="info-valor">Até 50% off</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-ver-estoque">Ver Ofertas</a>
+                    </div>
+
+                    <!-- Minas Mais -->
+                    <div class="card-parceiro">
+                        <div class="parceiro-logo">➕</div>
+                        <h3 class="parceiro-nome">Minas Mais</h3>
+                        <p class="parceiro-descricao">Farmácia popular com preços acessíveis</p>
+                        
+                        <div class="parceiro-info">
+                            <div class="info-item">
+                                <span class="info-label">💊 Medicamentos:</span>
+                                <span class="info-valor">150+ disponíveis</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">🏠 Lojas:</span>
+                                <span class="info-valor">Todo Minas Gerais</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">💳 Pagamento:</span>
+                                <span class="info-valor">Cartão até 12x</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#" class="btn-ver-estoque">Consultar Disponibilidade</a>
+                    </div>
+                </div>
+
+                <!-- Medicamentos Populares -->
+                <div class="medicamentos-populares">
+                    <h3 class="section-title">Medicamentos Mais Procurados</h3>
+                    <div class="medicamentos-grid">
+                        <div class="medicamento-item">
+                            <div class="medicamento-nome">Paracetamol 500mg</div>
+                            <div class="medicamento-descricao">Analgésico e antitérmico</div>
+                        </div>
+                        <div class="medicamento-item">
+                            <div class="medicamento-nome">Ibuprofeno 400mg</div>
+                            <div class="medicamento-descricao">Anti-inflamatório</div>
+                        </div>
+                        <div class="medicamento-item">
+                            <div class="medicamento-nome">Losartana 50mg</div>
+                            <div class="medicamento-descricao">Pressão arterial</div>
+                        </div>
+                        <div class="medicamento-item">
+                            <div class="medicamento-nome">Amoxicilina 500mg</div>
+                            <div class="medicamento-descricao">Antibiótico</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informações Importantes -->
+                <div class="info-importante">
+                    <h3>⚠️ Informações Importantes</h3>
+                    <p>• Todos os medicamentos exigem receita médica quando necessário<br>
+                       • Preços podem variar entre as farmácias<br>
+                       • Verifique a validade do produto antes do uso<br>
+                       • Consulte sempre um profissional de saúde</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-col-brand">
+                    <h4 class="footer-title">Farma Fácil</h4>
+                    <p>Sua plataforma de informações sobre medicamentos e saúde. Qualidade e confiabilidade ao seu alcance.</p>
+                </div>
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-title">Contato</h4>
+                    <p>📧 Email: <a href="mailto:contato@farmafacil.com.br" class="footer-link">contato@farmafacil.com.br</a></p>
+                    <p>📞 Telefone: (31) 99999-9999</p>
+                </div>
+                <div class="footer-col footer-col-location">
+                    <h4 class="footer-title">Localização</h4>
+                    <address class="footer-address">
+                        📍 Rua da Farmácia, 123<br>
+                        🏙️ Centro - Belo Horizonte, MG<br>
+                        📮 CEP: 30000-000
+                    </address>
+                </div>
+                <div class="footer-col footer-col-social">
+                    <h4 class="footer-title">Siga-nos</h4>
+                    <ul class="footer-social-list">
+                        <li><a href="#" class="footer-link"><img src='face.png' alt='Facebook' width="20" height="20">Facebook </a></li>
+                        <li><a href="#" class="footer-link"><img src='insta.png' alt='Instagram' width="20" height="20"> Instagram</a></li>
+                        <li><a href="#" class="footer-link"><img src='x.png' alt='X' width="20" height="20"> X</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copy">
+                <p>&copy; 2025 Farma Fácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

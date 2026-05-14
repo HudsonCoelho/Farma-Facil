@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farma Fácil - Contato</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .whatsapp-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: none; /* só aparece depois que o usuário clicar */
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+        .contact-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            max-width: 600px;
+        }
+        .contact-box label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .contact-box input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .contact-box input:focus {
+            outline: none;
+            border-color: #25D366;
+        }
+        .contact-box button {
+            width: 100%;
+            padding: 15px;
+            background: #25D366;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .contact-box button:hover {
+            background: #1ebe5d;
+        }
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- MENU TOPO -->
+    <div class="topbar menu-full-width">
+        <div class="container">
+            <nav class="main-menu">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Solicitar Medicamentos</a>
+                <a href="acompanharpedido.html">Acompanhar Pedido</a>
+                <a href="noticias.html">Notícias</a>
+                <a href="estoques.html">Estoques de Medicamentos</a>
+                <a href="telemedicina.html">Telemedicina</a>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="login-link" id="loginMenu">Entrar</a>
+                <a href="cadastro.html" class="register-link" id="cadastroMenu">Cadastrar</a>
+                <a href="#" class="logout-link" id="logoutMenu" onclick="logout()" style="display: none;">Sair</a>
+            </div>
+        </div>
+    </div>
+
+       <!-- Logo sem imagem -->
+<div class="logo">
+    <span class="logo-icon">⚕</span> <!-- símbolo opcional -->
+    <span class="logo-text">Farma</span><span class="logo-highlight">Fácil</span>
+</div>
+
+
+    <!-- BARRA DE PESQUISA -->
+    <div class="search-bar-modern-container">
+        <div class="container">
+            <form action="resultados.html" method="get">
+                <input type="text" name="q" placeholder="Buscar na Farma Fácil...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container">
+        <main>
+            <h2 style="color:white">Entre em Contato pelo WhatsApp</h2>
+            <p style="color:white">Digite o nome do remédio que deseja solicitar. O atendimento abrirá aqui mesmo na página.</p>
+
+            <div class="contact-box">
+                <label for="remedio">Nome do remédio:</label>
+                <input type="text" id="remedio" placeholder="Ex: Amoxicilina 500mg">
+
+                <button onclick="enviarWhatsApp()">📱 Solicitar no WhatsApp</button>
+            </div>
+
+            <!-- Aqui vai aparecer o WhatsApp -->
+            <iframe id="whatsappFrame" class="whatsapp-frame"></iframe>
+
+            <div class="contact-info">
+                <h3>📞 Outras Formas de Contato</h3>
+                <p><strong>Telefone:</strong> (31) 99999-9999</p>
+                <p><strong>Email:</strong> contato@farmafacil.com.br</p>
+                <p><strong>Horário de Atendimento:</strong> Segunda a Sábado, 8h às 18h</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-col-brand">
+                    <h4 class="footer-title">Farma Fácil</h4>
+                    <p>Sua plataforma de informações sobre medicamentos e saúde. Qualidade e confiabilidade ao seu alcance.</p>
+                </div>
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-title">Contato</h4>
+                    <p>📧 Email: <a href="mailto:contato@farmafacil.com.br" class="footer-link">contato@farmafacil.com.br</a></p>
+                    <p>📞 Telefone: (31) 99999-9999</p>
+                </div>
+                <div class="footer-col footer-col-location">
+                    <h4 class="footer-title">Localização</h4>
+                    <address class="footer-address">
+                        📍 Rua da Farmácia, 123<br>
+                        🏙️ Centro - Belo Horizonte, MG<br>
+                        📮 CEP: 30000-000
+                    </address>
+                </div>
+                <div class="footer-col footer-col-social">
+                    <h4 class="footer-title">Siga-nos</h4>
+                    <ul class="footer-social-list">
+                        <li><a href="#" class="footer-link"><img src='face.png' alt='Facebook' width="20" height="20">Facebook </a></li>
+                        <li><a href="#" class="footer-link"><img src='insta.png' alt='Instagram' width="20" height="20"> Instagram</a></li>
+                        <li><a href="#" class="footer-link"><img src='x.png' alt='X' width="20" height="20"> X</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copy">
+                <p>&copy; 2025 Farma Fácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- APENAS ESTE SCRIPT -->
+    <script src="main.js"></script>
+
+    <script>
+        function enviarWhatsApp() {
+            const numero = "5531999999999"; // Número com DDI Brasil (55) e DDD (31)
+            const remedio = document.getElementById("remedio").value.trim();
+
+            if(remedio === ""){
+                alert("Por favor, digite o nome do remédio.");
+                return;
+            }
+
+            const mensagem = `Olá! Gostaria de solicitar informações sobre o remédio: ${remedio}`;
+            const url = `https://web.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensagem)}`;
+
+            const frame = document.getElementById("whatsappFrame");
+            frame.style.display = "block";
+            frame.src = url;
+            
+            // Rolagem suave até o WhatsApp
+            frame.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>

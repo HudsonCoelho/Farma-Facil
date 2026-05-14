@@ -1,0 +1,29 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# Editor directories and files
+.vscode/
+*.suo
+*.tmp
+*.temp
+
+# Build output
+dist/
+build/
+
+# Windows image editor temporary files
+~*.*
+
+# Backup files
+*~
+*.bak
+*.swp

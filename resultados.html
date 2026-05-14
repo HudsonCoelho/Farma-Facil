@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados - Farma Fácil</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0UgimCf10-hiPplP_PTCUuyh5TZb7pk4&callback=initMap" async defer></script>
+    <style>
+        /* Estilos simplificados para resultados */
+        .results-main {
+            padding: 20px 0;
+        }
+        
+        .results-header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .search-term {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .results-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .farmacia-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid #007bff;
+        }
+        
+        .farmacia-nome {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+        
+        .farmacia-info {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .farmacia-preco {
+            font-size: 1.4em;
+            color: #28a745;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .status-aberta {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .status-fechada {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .mapa-container {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .voltar-busca {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .btn-voltar {
+            background: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-voltar:hover {
+            background: #545b62;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU TOPO -->
+    <div class="topbar menu-full-width">
+        <div class="container">
+            <nav class="main-menu">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Solicitar Medicamentos</a>
+                <a href="acompanharpedido.html">Acompanhar Pedido</a>
+                <a href="noticias.html">Notícias</a>
+                <a href="estoques.html">Estoques de Medicamentos</a>
+                <a href="telemedicina.html">Telemedicina</a>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="login-link" id="loginMenu">Entrar</a>
+                <a href="cadastro.html" class="register-link" id="cadastroMenu">Cadastrar</a>
+                <a href="#" class="logout-link" id="logoutMenu" onclick="logout()" style="display: none;">Sair</a>
+            </div>
+        </div>
+    </div>
+
+      <!-- Logo sem imagem -->
+<div class="logo">
+    <span class="logo-icon">⚕</span> <!-- símbolo opcional -->
+    <span class="logo-text">Farma</span><span class="logo-highlight">Fácil</span>
+</div>
+
+
+    <!-- BARRA DE PESQUISA -->
+    <div class="search-bar-modern-container">
+        <div class="container">
+            <form action="resultados.html" method="get" onsubmit="return handleSearch(event)">
+                <input type="text" name="q" id="searchInput" placeholder="Buscar medicamento...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container">
+        <main class="results-main">
+            <div class="results-header">
+                <h2>Farmácias em Divinópolis/MG</h2>
+                <p>Encontramos medicamento <span class="search-term" id="searchTerm">Paracetamol</span> 
+                   nas seguintes farmácias:</p>
+            </div>
+            
+            <div class="results-grid">
+                <!-- Farmácia 1 -->
+                <div class="farmacia-card">
+                    <div class="farmacia-nome">🏥 SUS - Divinópolis</div>
+                    <div class="farmacia-info">📍 Av. 1º de Junho, 100 - Centro</div>
+                    <div class="farmacia-info">📞 (37) 3221-0000</div>
+                    <div class="farmacia-info">⏰ 24 horas</div>
+                    <div class="farmacia-info"><span class="status-aberta">🟢 ABERTA AGORA</span></div>
+                    <div class="farmacia-preco">💊 GRATUITO</div>
+                    <div class="farmacia-info">⚠️ Necessário receita médica</div>
+                </div>
+                
+                <!-- Farmácia 2 -->
+                <div class="farmacia-card">
+                    <div class="farmacia-nome">💊 Drogasil - Divinópolis</div>
+                    <div class="farmacia-info">📍 Rua São Paulo, 500 - Centro</div>
+                    <div class="farmacia-info">📞 (37) 3222-1111</div>
+                    <div class="farmacia-info">⏰ 07:00 - 22:00</div>
+                    <div class="farmacia-info"><span class="status-aberta">🟢 ABERTA AGORA</span></div>
+                    <div class="farmacia-preco">R$ 12,90</div>
+                    <div class="farmacia-info">🎯 Entrega gratuita</div>
+                </div>
+                
+                <!-- Farmácia 3 -->
+                <div class="farmacia-card">
+                    <div class="farmacia-nome">🏪 Drogaria Araujo</div>
+                    <div class="farmacia-info">📍 Av. Getúlio Vargas, 200 - Esplanada</div>
+                    <div class="farmacia-info">📞 (37) 3214-5678</div>
+                    <div class="farmacia-info">⏰ 08:00 - 20:00</div>
+                    <div class="farmacia-info"><span class="status-fechada">🔴 FECHADA</span></div>
+                    <div class="farmacia-preco">R$ 13,50</div>
+                    <div class="farmacia-info">💳 Aceita cartão</div>
+                </div>
+                
+                <!-- Farmácia 4 -->
+                <div class="farmacia-card">
+                    <div class="farmacia-nome">💰 Poupa Minas</div>
+                    <div class="farmacia-info">📍 Rua Goiás, 300 - Belvedere</div>
+                    <div class="farmacia-info">📞 (37) 3215-9999</div>
+                    <div class="farmacia-info">⏰ 07:30 - 21:30</div>
+                    <div class="farmacia-info"><span class="status-aberta">🟢 ABERTA AGORA</span></div>
+                    <div class="farmacia-preco">R$ 11,80</div>
+                    <div class="farmacia-info">⭐ Melhor preço</div>
+                </div>
+                
+                <!-- Farmácia 5 -->
+                <div class="farmacia-card">
+                    <div class="farmacia-nome">💚 Minas Mais</div>
+                    <div class="farmacia-info">📍 Rua Pernambuco, 400 - Jardim Belvedere</div>
+                    <div class="farmacia-info">📞 (37) 3216-8888</div>
+                    <div class="farmacia-info">⏰ 08:00 - 19:00</div>
+                    <div class="farmacia-info"><span class="status-fechada">🔴 FECHADA</span></div>
+                    <div class="farmacia-preco">R$ 14,20</div>
+                    <div class="farmacia-info">🚗 Estacionamento gratuito</div>
+                </div>
+            </div>
+            
+            <div class="mapa-container">
+                <h3>📍 Mapa das Farmácias em Divinópolis</h3>
+                <div id="map"></div>
+            </div>
+            
+            <div class="voltar-busca">
+                <a href="index.html" class="btn-voltar">⬅️ Voltar para Nova Busca</a>
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER CORRIGIDO -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-col-brand">
+                    <h4 class="footer-title">Farma Fácil</h4>
+                    <p>Sua plataforma de informações sobre medicamentos e saúde. Qualidade e confiabilidade ao seu alcance.</p>
+                </div>
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-title">Contato</h4>
+                    <p>📧 Email: <a href="mailto:contato@farmafacil.com.br" class="footer-link">contato@farmafacil.com.br</a></p>
+                    <p>📞 Telefone: (31) 99999-9999</p>
+                </div>
+                <div class="footer-col footer-col-location">
+                    <h4 class="footer-title">Localização</h4>
+                    <address class="footer-address">
+                        📍 Rua da Farmácia, 123<br>
+                        🏙️ Centro - Belo Horizonte, MG<br>
+                        📮 CEP: 30000-000
+                    </address>
+                </div>
+                <div class="footer-col footer-col-social">
+                    <h4 class="footer-title">Siga-nos</h4>
+                    <ul class="footer-social-list">
+                        <li><a href="#" class="footer-link"><img src='face.png' alt='Facebook' width="20" height="20">Facebook </a></li>
+                        <li><a href="#" class="footer-link"><img src='insta.png' alt='Instagram' width="20" height="20"> Instagram</a></li>
+                        <li><a href="#" class="footer-link"><img src='x.png' alt='X' width="20" height="20"> X</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copy">
+                <p>&copy; 2025 Farma Fácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dados das farmácias de Divinópolis/MG
+        const farmaciasDivinopolis = [
+            {
+                id: 1,
+                nome: "SUS - Divinópolis",
+                endereco: "Av. 1º de Junho, 100 - Centro, Divinópolis/MG",
+                lat: -20.1394,
+                lng: -44.8902,
+                preco: 0,
+                aberta: true
+            },
+            {
+                id: 2,
+                nome: "Drogasil - Divinópolis",
+                endereco: "Rua São Paulo, 500 - Centro, Divinópolis/MG",
+                lat: -20.1410,
+                lng: -44.8885,
+                preco: 12.90,
+                aberta: true
+            },
+            {
+                id: 3,
+                nome: "Drogaria Araujo",
+                endereco: "Av. Getúlio Vargas, 200 - Esplanada, Divinópolis/MG",
+                lat: -20.1450,
+                lng: -44.8850,
+                preco: 13.50,
+                aberta: false
+            },
+            {
+                id: 4,
+                nome: "Poupa Minas",
+                endereco: "Rua Goiás, 300 - Belvedere, Divinópolis/MG",
+                lat: -20.1350,
+                lng: -44.8950,
+                preco: 11.80,
+                aberta: true
+            },
+            {
+                id: 5,
+                nome: "Minas Mais",
+                endereco: "Rua Pernambuco, 400 - Jardim Belvedere, Divinópolis/MG",
+                lat: -20.1300,
+                lng: -44.9000,
+                preco: 14.20,
+                aberta: false
+            }
+        ];
+
+        let map;
+
+        function initMap() {
+            // Centro do mapa em Divinópolis/MG
+            const divinopolisCenter = { lat: -20.1394, lng: -44.8902 };
+            
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: divinopolisCenter,
+                mapTypeControl: true,
+                streetViewControl: false
+            });
+            
+            // Adicionar marcadores das farmácias
+            farmaciasDivinopolis.forEach(farmacia => {
+                const marker = new google.maps.Marker({
+                    position: { lat: farmacia.lat, lng: farmacia.lng },
+                    map: map,
+                    title: farmacia.nome,
+                    icon: {
+                        url: farmacia.preco === 0 ? 
+                            'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiIGZpbGw9IiMyOGE3NDUiLz4KPHBhdGggZD0iTTkgMTJMMTEgMTRMMTUgMTAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4=' : // Verde para SUS (gratuito)
+                            'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMNCA3TDEyIDEyTDIwIDdMMTIgMloiIGZpbGw9IiNERDM0MzkiLz4KPHBhdGggZD0iTTQgMTdMMTIgMjJMMjAgMTdMMTIgMTJMNCAxN1oiIGZpbGw9IiNERDM0MzkiLz4KPHBhdGggZD0iTTQgMTJMMTIgMTdMMjAgMTJMMTIgN0w0IDEyWiIgZmlsbD0iI0ZGN0YyQyIvPgo8L3N2Zz4=', // Laranja para farmácias
+                        scaledSize: new google.maps.Size(30, 30)
+                    }
+                });
+                
+                const infowindow = new google.maps.InfoWindow({
+                    content: `
+                        <div style="padding: 10px; min-width: 200px;">
+                            <h4 style="margin: 0 0 5px 0; color: #007bff;">${farmacia.nome}</h4>
+                            <p style="margin: 0 0 5px 0; font-size: 12px;">${farmacia.endereco}</p>
+                            <p style="margin: 0; font-size: 14px; font-weight: bold; color: ${farmacia.preco === 0 ? '#28a745' : '#dc3545'};">
+                                ${farmacia.preco === 0 ? '💊 GRATUITO' : `R$ ${farmacia.preco.toFixed(2)}`}
+                            </p>
+                            <p style="margin: 5px 0 0 0; font-size: 12px; color: ${farmacia.aberta ? 'green' : 'red'};">
+                                ${farmacia.aberta ? '🟢 Aberta' : '🔴 Fechada'}
+                            </p>
+                        </div>
+                    `
+                });
+                
+                marker.addListener('click', () => {
+                    infowindow.open(map, marker);
+                });
+            });
+        }
+
+        function handleSearch(event) {
+            event.preventDefault();
+            const searchTerm = document.getElementById('searchInput').value;
+            if (searchTerm.trim()) {
+                // Atualiza o termo de busca na página
+                document.getElementById('searchTerm').textContent = searchTerm;
+                // Aqui você pode adicionar lógica para filtrar farmácias por medicamento
+            }
+            return false;
+        }
+
+        // Carregar termo de busca da URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchTerm = urlParams.get('q');
+            if (searchTerm) {
+                document.getElementById('searchTerm').textContent = searchTerm;
+                document.getElementById('searchInput').value = searchTerm;
+            }
+            
+            updateMenu();
+        });
+
+        // Sistema de autenticação
+        function logout() {
+            localStorage.removeItem('loggedUser');
+            updateMenu();
+            window.location.href = 'index.html';
+        }
+
+        function updateMenu() {
+            const logged = !!localStorage.getItem('loggedUser');
+            const loginMenu = document.getElementById('loginMenu');
+            const cadastroMenu = document.getElementById('cadastroMenu');
+            const logoutMenu = document.getElementById('logoutMenu');
+            
+            if (loginMenu) loginMenu.style.display = logged ? 'none' : '';
+            if (cadastroMenu) cadastroMenu.style.display = logged ? 'none' : '';
+            if (logoutMenu) logoutMenu.style.display = logged ? '' : 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemedicina - Farma Fácil</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="telemedicina.css">
+</head>
+<body>
+     <!-- MENU TOPO -->
+    <div class="topbar menu-full-width">
+        <div class="container">
+            <nav class="main-menu">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Solicitar Medicamentos</a>
+                <a href="acompanharpedido.html">Acompanhar Pedido</a>
+                <a href="noticias.html">Notícias</a>
+                <a href="estoques.html">Estoques de Medicamentos</a>
+                <a href="telemedicina.html">Telemedicina</a>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="login-link" id="loginMenu">Entrar</a>
+                <a href="cadastro.html" class="register-link" id="cadastroMenu">Cadastrar</a>
+                <a href="#" class="logout-link" id="logoutMenu" onclick="logout()" style="display: none;">Sair</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+        <span class="logo-icon">⚕</span>
+        <span class="logo-text">Farma</span><span class="logo-highlight">Fácil</span>
+    </div>
+
+     <!-- BARRA DE PESQUISA - Com container -->
+    <div class="search-bar-modern-container">
+        <div class="container">
+            <form action="resultados.html" method="get">
+                <input type="text" name="q" placeholder="Buscar na Farma Fácil...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="container">
+        <main class="telemedicina-main">
+            <div class="telemedicina-container">
+                <!-- Hero Section -->
+                <section class="hero-telemedicina">
+                    <h1 class="hero-title">Consultas Médicas Online</h1>
+                    <p class="hero-subtitle">Cuide da sua saúde sem sair de casa. Consultas com médicos especialistas de forma rápida, segura e acessível.</p>
+                    
+                    <div class="hero-features">
+                        <div class="hero-feature">⚡ Consulta em 15 minutos</div>
+                        <div class="hero-feature">👨‍⚕️ 50+ especialistas</div>
+                        <div class="hero-feature">💊 Receita digital</div>
+                        <div class="hero-feature">📱 Atendimento 24/7</div>
+                    </div>
+                </section>
+
+                <!-- Serviços -->
+                <section class="servicos-telemedicina">
+                    <h2 class="section-title">Nossos Serviços</h2>
+                    <div class="servicos-grid">
+                        <!-- Consulta Básica -->
+                        <div class="card-servico">
+                            <div class="servico-icone">👨‍⚕️</div>
+                            <h3 class="servico-nome">Consulta Geral</h3>
+                            <p class="servico-descricao">Atendimento médico para sintomas comuns, orientações gerais e encaminhamentos quando necessário.</p>
+                            <div class="servico-preco">R$ 49,90</div>
+                            <div class="servico-periodo">30 minutos de consulta</div>
+                            <a href="#" class="btn-agendar">Agendar Consulta</a>
+                        </div>
+
+                        <!-- Pediatria -->
+                        <div class="card-servico">
+                            <div class="servico-icone">👶</div>
+                            <h3 class="servico-nome">Consulta Pediátrica</h3>
+                            <p class="servico-descricao">Cuidados especializados para crianças e adolescentes com pediatras experientes.</p>
+                            <div class="servico-preco">R$ 69,90</div>
+                            <div class="servico-periodo">40 minutos de consulta</div>
+                            <a href="#" class="btn-agendar">Agendar Consulta</a>
+                        </div>
+
+                        <!-- Psicologia -->
+                        <div class="card-servico">
+                            <div class="servico-icone">🧠</div>
+                            <h3 class="servico-nome">Acompanhamento Psicológico</h3>
+                            <p class="servico-descricao">Sessões de terapia online com psicólogos credenciados para seu bem-estar mental.</p>
+                            <div class="servico-preco">R$ 89,90</div>
+                            <div class="servico-periodo">50 minutos de sessão</div>
+                            <a href="#" class="btn-agendar">Agendar Sessão</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Como Funciona -->
+                <section class="como-funciona">
+                    <h2 class="section-title">Como Funciona a Telemedicina</h2>
+                    <div class="passos-grid">
+                        <div class="passo-item">
+                            <div class="passo-numero">1</div>
+                            <h3 class="passo-titulo">Agendamento</h3>
+                            <p class="passo-descricao">Escolha o especialista e horário que melhor se adequa à sua necessidade.</p>
+                        </div>
+                        <div class="passo-item">
+                            <div class="passo-numero">2</div>
+                            <h3 class="passo-titulo">Pagamento</h3>
+                            <p class="passo-descricao">Realize o pagamento de forma segura via cartão, PIX ou boleto.</p>
+                        </div>
+                        <div class="passo-item">
+                            <div class="passo-numero">3</div>
+                            <h3 class="passo-titulo">Consulta</h3>
+                            <p class="passo-descricao">Conecte-se por videochamada no horário agendado.</p>
+                        </div>
+                        <div class="passo-item">
+                            <div class="passo-numero">4</div>
+                            <h3 class="passo-titulo">Prescrição</h3>
+                            <p class="passo-descricao">Receba receitas e atestados digitalmente após a consulta.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Equipe Médica -->
+                <section class="equipe-medica">
+                    <h2 class="section-title">Nossa Equipe Médica</h2>
+                    <div class="medicos-grid">
+                        <!-- Médico 1 -->
+                        <div class="card-medico">
+                            <div class="medico-foto">👨‍⚕️</div>
+                            <h3 class="medico-nome">Dr. Carlos Silva</h3>
+                            <div class="medico-especialidade">Clínico Geral</div>
+                            <p class="medico-experiencia">15 anos de experiência • CRM: 12345/MG</p>
+                            <div class="medico-avaliacao">
+                                <div class="estrelas">★★★★★</div>
+                                <div class="avaliacao-texto">4.9 (247 avaliações)</div>
+                            </div>
+                            <a href="#" class="btn-agendar">Agendar com Dr. Carlos</a>
+                        </div>
+
+                        <!-- Médica 2 -->
+                        <div class="card-medico">
+                            <div class="medico-foto">👩‍⚕️</div>
+                            <h3 class="medico-nome">Dra. Ana Santos</h3>
+                            <div class="medico-especialidade">Pediatra</div>
+                            <p class="medico-experiencia">12 anos de experiência • CRM: 67890/MG</p>
+                            <div class="medico-avaliacao">
+                                <div class="estrelas">★★★★★</div>
+                                <div class="avaliacao-texto">4.8 (189 avaliações)</div>
+                            </div>
+                            <a href="#" class="btn-agendar">Agendar com Dra. Ana</a>
+                        </div>
+
+                        <!-- Psicóloga -->
+                        <div class="card-medico">
+                            <div class="medico-foto">🧠</div>
+                            <h3 class="medico-nome">Dra. Mariana Costa</h3>
+                            <div class="medico-especialidade">Psicóloga</div>
+                            <p class="medico-experiencia">8 anos de experiência • CRP: 54321/MG</p>
+                            <div class="medico-avaliacao">
+                                <div class="estrelas">★★★★☆</div>
+                                <div class="avaliacao-texto">4.7 (156 avaliações)</div>
+                            </div>
+                            <a href="#" class="btn-agendar">Agendar com Dra. Mariana</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Depoimentos -->
+                <section class="depoimentos">
+                    <h2 class="section-title">O Que Nossos Pacientes Dizem</h2>
+                    <div class="depoimentos-grid">
+                        <div class="card-depoimento">
+                            <p class="depoimento-texto">"Consulta rápida e eficiente. O médico foi muito atencioso e a receita chegou na hora. Recomendo!"</p>
+                            <div class="depoimento-autor">
+                                <div class="autor-foto">👤</div>
+                                <div class="autor-info">
+                                    <div class="autor-nome">João Silva</div>
+                                    <div class="autor-local">Belo Horizonte, MG</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-depoimento">
+                            <p class="depoimento-texto">"Perfeito para mães com crianças pequenas. Não precisei sair de casa e a pediatra foi excelente!"</p>
+                            <div class="depoimento-autor">
+                                <div class="autor-foto">👤</div>
+                                <div class="autor-info">
+                                    <div class="autor-nome">Maria Oliveira</div>
+                                    <div class="autor-local">Contagem, MG</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-depoimento">
+                            <p class="depoimento-texto">"As sessões de terapia online me salvaram durante a pandemia. Profissional incrível!"</p>
+                            <div class="depoimento-autor">
+                                <div class="autor-foto">👤</div>
+                                <div class="autor-info">
+                                    <div class="autor-nome">Pedro Costa</div>
+                                    <div class="autor-local">Betim, MG</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section class="faq-section">
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                    <div class="faq-grid">
+                        <div class="faq-item">
+                            <div class="faq-pergunta">A consulta online é segura?</div>
+                            <div class="faq-resposta">
+                                Sim! Todas as consultas são realizadas através de plataforma segura com criptografia de dados. Nossos médicos são todos credenciados e seguem rigorosos protocolos de segurança.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-pergunta">Posso receber receita médica digital?</div>
+                            <div class="faq-resposta">
+                                Sim, as receitas médicas são emitidas digitalmente e têm validade legal em todo o território nacional, de acordo com a legislação vigente.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-pergunta">Quais formas de pagamento aceitam?</div>
+                            <div class="faq-resposta">
+                                Aceitamos cartão de crédito (até 12x), débito, PIX e boleto bancário. Todo o processo de pagamento é seguro e certificado.
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-pergunta">E se eu precisar cancelar a consulta?</div>
+                            <div class="faq-resposta">
+                                Você pode cancelar gratuitamente até 2 horas antes da consulta. Após esse período, o valor não será reembolsado.
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Final -->
+                <section class="cta-final">
+                    <h2 class="cta-title">Pronto para Cuidar da Sua Saúde?</h2>
+                    <p class="cta-subtitle">Agende sua primeira consulta online e experimente a praticidade da telemedicina</p>
+                    <a href="#" class="btn-cta-grande">Agendar Minha Consulta Agora</a>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-col-brand">
+                    <h4 class="footer-title">Farma Fácil</h4>
+                    <p>Sua plataforma de informações sobre medicamentos e saúde. Qualidade e confiabilidade ao seu alcance.</p>
+                </div>
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-title">Contato</h4>
+                    <p>📧 Email: <a href="mailto:contato@farmafacil.com.br" class="footer-link">contato@farmafacil.com.br</a></p>
+                    <p>📞 Telefone: (31) 99999-9999</p>
+                </div>
+                <div class="footer-col footer-col-location">
+                    <h4 class="footer-title">Localização</h4>
+                    <address class="footer-address">
+                        📍 Rua da Farmácia, 123<br>
+                        🏙️ Centro - Belo Horizonte, MG<br>
+                        📮 CEP: 30000-000
+                    </address>
+                </div>
+                <div class="footer-col footer-col-social">
+                    <h4 class="footer-title">Siga-nos</h4>
+                    <ul class="footer-social-list">
+                        <li><a href="#" class="footer-link"><img src='face.png' alt='Facebook' width="20" height="20">Facebook </a></li>
+                        <li><a href="#" class="footer-link"><img src='insta.png' alt='Instagram' width="20" height="20"> Instagram</a></li>
+                        <li><a href="#" class="footer-link"><img src='x.png' alt='X' width="20" height="20"> X</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copy">
+                <p>&copy; 2025 Farma Fácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-pergunta').forEach(pergunta => {
+            pergunta.addEventListener('click', () => {
+                const item = pergunta.parentElement;
+                item.classList.toggle('ativo');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farma Fácil</title>
+    <link rel="stylesheet" href="style.css">
+</head> 
+<body>
+    <div class="notification-bar">
+        <p>🚀 Bem-vindo à Farma Fácil! Sua plataforma confiável para informações sobre medicamentos e saúde. 💊 Utilizando nosso cupom de desconto: FARMAFACIL ganhe 10% de desconto na sua primeira compra!</p>
+    </div>
+     <!-- MENU TOPO -->
+    <div class="topbar menu-full-width">
+        <div class="container">
+            <nav class="main-menu">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Solicitar Medicamentos</a>
+                <a href="acompanharpedido.html">Acompanhar Pedido</a>
+                <a href="noticias.html">Notícias</a>
+                <a href="estoques.html">Estoques de Medicamentos</a>
+                <a href="telemedicina.html">Telemedicina</a>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="login-link" id="loginMenu">Entrar</a>
+                <a href="cadastro.html" class="register-link" id="cadastroMenu">Cadastrar</a>
+                <a href="#" class="logout-link" id="logoutMenu" onclick="logout()" style="display: none;">Sair</a>
+            </div>
+        </div>
+    </div>
+
+   <!-- Logo sem imagem -->
+<div class="logo">
+    <span class="logo-icon">⚕</span>
+    <span class="logo-text">Farma</span><span class="logo-highlight">Fácil</span>
+</div>
+
+
+    <!-- BARRA DE PESQUISA - Com container -->
+    <div class="search-bar-modern-container">
+        <div class="container">
+            <form action="resultados.html" method="get">
+                <input type="text" name="q" placeholder="Buscar na Farma Fácil...">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LAYOUT PRINCIPAL COM MENU LATERAL -->
+    <div class="main-layout-wrapper">
+        <!-- MENU LATERAL -->
+        <aside class="sidebar-left">
+            <h3 style="color: #3498db; font-style: italic; font-size: 20px;">Medicamentos por Grupo</h3>
+            
+            <!-- Grupo 1: Analgésicos e Antitérmicos -->
+            <div class="menu-group">
+                <div class="group-header">
+                    <span>Analgésicos e Antitérmicos</span>
+                    <span class="group-icon">▶</span>
+                </div>
+                <div class="medicines-list">
+                    <div class="medicine-item"><a href="resultados.html">Paracetamol</a></div>
+                    <div class="medicine-item">Dipirona Sódica</div>
+                    <div class="medicine-item">Ibuprofeno</div>
+                </div>
+            </div>
+            
+            <!-- Grupo 2: Anti-inflamatórios -->
+            <div class="menu-group">
+                <div class="group-header">
+                    <span>Anti-inflamatórios</span>
+                    <span class="group-icon">▶</span>
+                </div>
+                <div class="medicines-list">
+                    <div class="medicine-item">Nimesulida</div>
+                    <div class="medicine-item">Cetoprofeno</div>
+                    <div class="medicine-item">Diclofenaco</div>
+                </div>
+            </div>
+            
+            <!-- Grupo 3: Anti-hipertensivos -->
+            <div class="menu-group">
+                <div class="group-header">
+                    <span>Anti-hipertensivos</span>
+                    <span class="group-icon">▶</span>
+                </div>
+                <div class="medicines-list">
+                    <div class="medicine-item">Losartana</div>
+                    <div class="medicine-item">Enalapril</div>
+                    <div class="medicine-item">Atenolol</div>
+                    <div class="medicine-item">Hidroclorotiazida</div>
+                </div>
+            </div>
+            
+            <!-- Grupo 4: Antibióticos -->
+            <div class="menu-group">
+                <div class="group-header">
+                    <span>Antibióticos</span>
+                    <span class="group-icon">▶</span>
+                </div>
+                <div class="medicines-list">
+                    <div class="medicine-item">Amoxicilina</div>
+                    <div class="medicine-item">Azitromicina</div>
+                    <div class="medicine-item">Ciprofloxacino</div>
+                </div>
+            </div>
+            
+            <!-- Grupo 5: Redutores de Colesterol -->
+            <div class="menu-group">
+                <div class="group-header">
+                    <span>Redutores de Colesterol</span>
+                    <span class="group-icon">▶</span>
+                </div>
+                <div class="medicines-list">
+                    <div class="medicine-item">Sinvastatina</div>
+                    <div class="medicine-item">Atorvastatina</div>
+                </div>
+            </div>
+            
+            <!-- Grupo 6: Gastrointestinais -->
+            <div class="menu-group">
+                <div class="group-header">
+                    <span>Gastrointestinais</span>
+                    <span class="group-icon">▶</span>
+                </div>
+                <div class="medicines-list">
+                    <div class="medicine-item">Simeticona</div>
+                    <div class="medicine-item">Omeprazol</div>
+                    <div class="medicine-item">Ranitidina</div>
+                </div>
+            </div>
+            
+            <!-- Grupo 7: Diabetes -->
+            <div class="menu-group">
+                <div class="group-header">
+                    <span>Diabetes</span>
+                    <span class="group-icon">▶</span>
+                </div>
+                <div class="medicines-list">
+                    <div class="medicine-item">Metformina</div>
+                    <div class="medicine-item">Glibenclamida</div>
+                    <div class="medicine-item">Insulina NPH</div>
+                    <div class="medicine-item">Insulina Regular</div>
+                    <div class="medicine-item">Glimepirida</div>
+                    <div class="medicine-item">Sitagliptina</div>
+                </div>
+            </div>
+
+
+                <!-- Grupo 8: Vitaminas e Suplementos -->
+                <div class="menu-group">
+                    <div class="group-header">
+                        <span>Vitaminas e Suplementos</span>
+                        <span class="group-icon">▶</span>
+                    </div>
+                    <div class="medicines-list">
+                        <div class="medicine-item">Vitamina C</div>
+                        <div class="medicine-item">Vitamina D</div>
+                        <div class="medicine-item">Vitamina B12</div>
+                        <div class="medicine-item">Ômega 3</div>
+                        <div class="medicine-item">Ferro</div>
+                        <div class="medicine-item">Cálcio</div>
+                    </div>
+                </div>
+
+                <!-- Grupo 9: Dores Musculares -->
+                <div class="menu-group">
+                    <div class="group-header">
+                        <span>Dores Musculares</span>
+                        <span class="group-icon">▶</span>
+                    </div>
+                    <div class="medicines-list">
+                        <div class="medicine-item">Ciclobenzaprina</div>
+                        <div class="medicine-item">Carisoprodol</div>
+                        <div class="medicine-item">Tandrilax</div>
+                        <div class="medicine-item">Miosan</div>
+                    </div>
+                </div>
+
+                <!-- Grupo 10: Problemas de Pele -->
+                <div class="menu-group">
+                    <div class="group-header">
+                        <span>Problemas de Pele</span>
+                        <span class="group-icon">▶</span>
+                    </div>
+                    <div class="medicines-list">
+                        <div class="medicine-item">Hidrocortisona</div>
+                        <div class="medicine-item">Betametasona</div>
+                        <div class="medicine-item">Aciclovir</div>
+                        <div class="medicine-item">Cetoconazol</div>
+                        <div class="medicine-item">Permetrina</div>
+                    </div>
+                </div>
+            <div>
+                <br>
+                <br>
+                <br>
+                <h3 style="color: #3498db; font-style: italic; font-size: 35px;">Parceiros</h3>
+                <a href="https://www.gov.br/saude/pt-br/sus" target="_blank">
+                   <img src="https://pbs.twimg.com/profile_images/728977357344800770/pzK4cKbp_400x400.jpg" alt="Farmácia São Paulo" class="partner-logo" width="225" height="225">
+                </a>
+                <br>
+                <a href="https://www.drogasil.com.br/" target="_blank">
+                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbRWfOQJMRSXh1m8cZqT65BeNv_DwYYuC4SA&s" alt="Drogasil" class="partner-logo">
+                </a>
+                <br>
+                <a href="https://www.araujo.com.br" target="_blank">
+                   <img src="https://images.rappi.com.br/marketplace/drogariaaraujo_1619739432818.jpg?d=200x200&e=webp" alt="Drogaria Araújo" class="partner-logo" width="225" height="225">
+                </a>
+                <br>
+                <a href="https://poupaminas.far.br/#!" target="_blank">
+                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZiXQxwlqf8zaPoL3HH5bpv5Jh4-h7Cg1bLBUdvdZ50TRKGjJn9zJtr-GJLhknyG-gl2M&usqp=CAU" alt="Poupa Minas" class="partner-logo" width="225" height="225">
+                </a>
+                <br>
+                <a href="https://www.drogariasminasmais.com.br/" target="_blank">
+                   <img src="https://images.rappi.com.br/marketplace/drogariasminasmais_mt_nc-1641215292476.png?d=200x200&e=webp" alt="Drogarias Minas Mais" class="partner-logo" width="225" height="225">
+                </a>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div class="main-content-area">
+            <div class="container">
+                <main>
+                    <div class="main-content-flex">
+                        <div class="main-content-lista">
+                            <!-- Seção de Medicamentos Populares Melhorada -->
+                            <div class="medicamentos-section">
+                                <h3>Medicamentos Populares</h3>
+                                <div class="medicamentos-grid">
+                                    <!-- Paracetamol -->
+                                    <div class="medicamento-card">
+                                        <div class="medicamento-header">
+                                            <div class="medicamento-imagem">
+                                                <span class="med-icon">💊</span>
+                                            </div>
+                                            <div class="medicamento-titulo">
+                                                <h4>Paracetamol</h4>
+                                                <span class="categoria">Analgésico</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-info">
+                                            <p class="descricao">Alívio de dores e febre</p>
+                                            <div class="preco-info">
+                                                <span class="preco">R$ 8,90</span>
+                                                <span class="farmacia">Drogasil</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-actions">
+                                            <button class="btn-precos" onclick="verPrecos('Paracetamol')">
+                                                <span>👁️</span> Ver Preços
+                                            </button>
+                                            <button class="btn-info" onclick="verInfo('Paracetamol')">
+                                                <span>ℹ️</span> Info
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Ibuprofeno -->
+                                    <div class="medicamento-card">
+                                        <div class="medicamento-header">
+                                            <div class="medicamento-imagem">
+                                                <span class="med-icon">🔥</span>
+                                            </div>
+                                            <div class="medicamento-titulo">
+                                                <h4>Ibuprofeno</h4>
+                                                <span class="categoria">Anti-inflamatório</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-info">
+                                            <p class="descricao">Inflamações e dores</p>
+                                            <div class="preco-info">
+                                                <span class="preco">R$ 12,50</span>
+                                                <span class="farmacia">Poupa Minas</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-actions">
+                                            <button class="btn-precos" onclick="verPrecos('Ibuprofeno')">
+                                                <span>👁️</span> Ver Preços
+                                            </button>
+                                            <button class="btn-info" onclick="verInfo('Ibuprofeno')">
+                                                <span>ℹ️</span> Info
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Amoxicilina -->
+                                    <div class="medicamento-card">
+                                        <div class="medicamento-header">
+                                            <div class="medicamento-imagem">
+                                                <span class="med-icon">🦠</span>
+                                            </div>
+                                            <div class="medicamento-titulo">
+                                                <h4>Amoxicilina</h4>
+                                                <span class="categoria">Antibiótico</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-info">
+                                            <p class="descricao">Infecções bacterianas</p>
+                                            <div class="preco-info">
+                                                <span class="preco">R$ 15,80</span>
+                                                <span class="farmacia">Araujo</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-actions">
+                                            <button class="btn-precos" onclick="verPrecos('Amoxicilina')">
+                                                <span>👁️</span> Ver Preços
+                                            </button>
+                                            <button class="btn-info" onclick="verInfo('Amoxicilina')">
+                                                <span>ℹ️</span> Info
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Losartana -->
+                                    <div class="medicamento-card">
+                                        <div class="medicamento-header">
+                                            <div class="medicamento-imagem">
+                                                <span class="med-icon">❤️</span>
+                                            </div>
+                                            <div class="medicamento-titulo">
+                                                <h4>Losartana</h4>
+                                                <span class="categoria">Hipertensão</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-info">
+                                            <p class="descricao">Pressão arterial</p>
+                                            <div class="preco-info">
+                                                <span class="preco">R$ 18,30</span>
+                                                <span class="farmacia">Minas Mais</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-actions">
+                                            <button class="btn-precos" onclick="verPrecos('Losartana')">
+                                                <span>👁️</span> Ver Preços
+                                            </button>
+                                            <button class="btn-info" onclick="verInfo('Losartana')">
+                                                <span>ℹ️</span> Info
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Dipirona -->
+                                    <div class="medicamento-card">
+                                        <div class="medicamento-header">
+                                            <div class="medicamento-imagem">
+                                                <span class="med-icon">🌡️</span>
+                                            </div>
+                                            <div class="medicamento-titulo">
+                                                <h4>Dipirona Sódica</h4>
+                                                <span class="categoria">Analgésico</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-info">
+                                            <p class="descricao">Dores e febre</p>
+                                            <div class="preco-info">
+                                                <span class="preco">R$ 6,90</span>
+                                                <span class="farmacia">Drogasil</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-actions">
+                                            <button class="btn-precos" onclick="verPrecos('Dipirona')">
+                                                <span>👁️</span> Ver Preços
+                                            </button>
+                                            <button class="btn-info" onclick="verInfo('Dipirona')">
+                                                <span>ℹ️</span> Info
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Sildenafila -->
+                                    <div class="medicamento-card">
+                                        <div class="medicamento-header">
+                                            <div class="medicamento-imagem">
+                                                <span class="med-icon">💪</span>
+                                            </div>
+                                            <div class="medicamento-titulo">
+                                                <h4>Sildenafila</h4>
+                                                <span class="categoria">Disfunção Erétil</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-info">
+                                            <p class="descricao">Tratamento específico</p>
+                                            <div class="preco-info">
+                                                <span class="preco">R$ 42,90</span>
+                                                <span class="farmacia">Araujo</span>
+                                            </div>
+                                        </div>
+                                        <div class="medicamento-actions">
+                                            <button class="btn-precos" onclick="verPrecos('Sildenafila')">
+                                                <span>👁️</span> Ver Preços
+                                            </button>
+                                            <button class="btn-info" onclick="verInfo('Sildenafila')">
+                                                <span>ℹ️</span> Info
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Botão para ver mais -->
+                                <div class="ver-mais-container">
+                                    <button class="btn-ver-mais" onclick="verTodosMedicamentos()">
+                                        <span>📋</span> Ver Todos os Medicamentos
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Seção de Indicações -->
+                            <div class="indicacoes-section">
+                                <h3>Indicações dos Medicamentos</h3>
+                                <div class="indicacoes-grid">
+                                    <div class="indicacao-item">
+                                        <strong>Losartana:</strong> Para tratamento de pressão alta.
+                                    </div>
+                                    <div class="indicacao-item">
+                                        <strong>Dipirona sódica:</strong> Analgésico e antitérmico.
+                                    </div>
+                                    <div class="indicacao-item">
+                                        <strong>Hidroclorotiazida:</strong> Diurético, usado para hipertensão.
+                                    </div>
+                                    <div class="indicacao-item">
+                                        <strong>Nimesulida:</strong> Anti-inflamatório.
+                                    </div>
+                                    <div class="indicacao-item">
+                                        <strong>Tadalafila:</strong> Utilizada para tratamento de disfunção erétil.
+                                    </div>
+                                    <div class="indicacao-item">
+                                        <strong>Simeticona:</strong> Para alívio de gases intestinais.
+                                    </div>
+                                    <div class="indicacao-item">
+                                        <strong>Enalapril:</strong> Anti-hipertensivo.
+                                    </div>
+                                    <div class="indicacao-item">
+                                        <strong>Sinvastatina:</strong> Medicamento para reduzir o colesterol.
+                                    </div>
+                                </div>
+                            </div>
+                     
+
+
+                    <div class="video-article">
+                        <h1 class="destaque-video">Videos Em Destaque 🎥</h1>
+                        <h3 class="video-title">Programa Mais Médicos</h3>
+                        <div class="video-frame-container">
+                            <iframe src="https://www.youtube.com/embed/1ysEXt9T8eY?si=hD9-osffaE322pzL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p>
+                            O Programa Mais Médicos é uma política pública que enfrenta o desafio para a melhoria do atendimento aos usuários do Sistema Único de Saúde - SUS. O programa leva médicos para regiões prioritárias, remotas, de difícil acesso e de alto índice de vulnerabilidade, onde há escassez ou ausência desses profissionais. Também promove a formação e qualificação dos profissionais por meio de parcerias com instituições de ensino. Essa estratégia visa garantir maior equidade no acesso aos serviços de saúde em todo o território nacional.
+                        </p>
+                    </div>
+
+                    <div class="video-article">
+                        <h3 class="video-title">Drogasil | 5 passos para começar a praticar exercícios</h3>
+                        <div class="video-frame-container">
+                            <iframe src="https://www.youtube.com/embed/UeTF3k_OlNw?si=Hn5b4f6N2Xy7Mpt3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p>
+                            Ter uma rotina ativa tem diversos benefícios à saúde, mas disso você já sabia. Difícil é começar, não é? Então aproveite essas dicas.
+                        </p>
+                    </div>
+
+                    <div class="video-article">
+                        <h3 class="video-title">COMO CUIDAR dos nossos idosos no inverno | Especialista Responde</h3>
+                        <div class="video-frame-container">
+                            <iframe src="https://www.youtube.com/embed/qX78SR8FBFc?si=758S1oSYlOsNjmiH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <p>
+                            Hoje quem está aqui conosco é o geriatra Daniel Quiroga para falar sobre os cuidados com idosos no inverno. Um conteúdo de utilidade pública porque, afinal, todos nós queremos chegar na melhor idade, né? E aqui vamos entender como chegar na melhor idade da melhor forma possível, com muita saúde, disposição e protegidos das doenças de inverno.
+                        </p>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!-- RODAPÉ - Com container -->
+    <footer class="custom-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-col-brand">
+                    <h4 class="footer-title">Farma Fácil</h4>
+                    <p>Sua plataforma de informações sobre medicamentos e saúde. Qualidade e confiabilidade ao seu alcance.</p>
+                </div>
+                <div class="footer-col footer-col-contact">
+                    <h4 class="footer-title">Contato</h4>
+                    <p>📧 Email: <a href="mailto:contato@farmafacil.com.br" class="footer-link">contato@farmafacil.com.br</a></p>
+                    <p>📞 Telefone: (31) 99999-9999</p>
+                </div>
+                <div class="footer-col footer-col-location">
+                    <h4 class="footer-title">Localização</h4>
+                    <address class="footer-address">
+                        📍 Rua da Farmácia, 123<br>
+                        🏙️ Centro - Belo Horizonte, MG<br>
+                        📮 CEP: 30000-000
+                    </address>
+                </div>
+                <div class="footer-col footer-col-social">
+                    <h4 class="footer-title">Siga-nos</h4>
+                    <ul class="footer-social-list">
+                        <li><a href="#" class="footer-link"><img src='face.png' alt='Facebook' width="20" height="20">Facebook </a></li>
+                        <li><a href="#" class="footer-link"><img src='insta.png' alt='Instagram' width="20" height="20"> Instagram</a></li>
+                        <li><a href="#" class="footer-link"><img src='x.png' alt='X' width="20" height="20"> X</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copy">
+                <p>&copy; 2025 Farma Fácil. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

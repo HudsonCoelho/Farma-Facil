@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farma Fácil</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+      <!-- MENU TOPO -->
+    <div class="topbar menu-full-width">
+        <div class="container">
+            <nav class="main-menu">
+                <a href="index.html">Início</a>
+                <a href="contato.html">Solicitar Medicamentos</a>
+                <a href="acompanharpedido.html">Acompanhar Pedido</a>
+                <a href="noticias.html">Notícias</a>
+                <a href="estoques.html">Estoques de Medicamentos</a>
+                <a href="telemedicina.html">Telemedicina</a>
+            </nav>
+            <div class="user-actions">
+                <a href="login.html" class="login-link" id="loginMenu">Entrar</a>
+                <a href="cadastro.html" class="register-link" id="cadastroMenu">Cadastrar</a>
+                <a href="#" class="logout-link" id="logoutMenu" onclick="logout()" style="display: none;">Sair</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo sem imagem -->
+    <div class="logo">
+      <span class="logo-icon">⚕</span>
+      <!-- símbolo opcional -->
+      <span class="logo-text">Farma</span
+      ><span class="logo-highlight">Fácil</span>
+    </div>
+
+    <!-- BARRA DE PESQUISA - Com container -->
+    <div class="search-bar-modern-container">
+      <div class="container">
+        <form action="resultados.html" method="get">
+          <input type="text" name="q" placeholder="Buscar na Farma Fácil..." />
+          <button type="submit">Buscar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- CONTEÚDO PRINCIPAL - Com container -->
+    <div class="container">
+      <main>
+        <div class="main-content-flex">
+          <div class="main-content-lista">
+            <h2>Notícias Recentes sobre Saúde e Medicamentos</h2>
+            <article class="news-article">
+              <h3 class="news-title">
+                Novas Diretrizes para Uso de Antibióticos
+              </h3>
+
+              <p class="news-date">Publicado em: 15 de Junho de 2024</p>
+              <p class="news-excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <a href="#" class="read-more-link">Leia mais</a>
+            </article>
+            <article class="news-article">
+              <h3 class="news-title">Avanços na Pesquisa de Vacinas</h3>
+              <p class="news-date">Publicado em: 10 de Junho de 2024</p>
+              <p class="news-excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <a href="#" class="read-more-link">Leia mais</a>
+            </article>
+            <article class="news-article">
+              <h3 class="news-title">Tendências em Saúde Mental para 2024</h3>
+              <p class="news-date">Publicado em: 5 de Junho de 2024</p>
+              <p class="news-excerpt">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <a href="#" class="read-more-link">Leia mais</a>
+            </article>
+          </div>
+
+          <aside class="parceiros custom-aside">
+            <h3>Assuntos em Alta</h3>
+            <div class="farmacia-card">
+              <a href="#" class="news-title">Medicamentos Genéricos</a>
+            </div>
+            <div class="farmacia-card">
+              <a href="#" class="news-title">Saúde Mental</a>
+            </div>
+            <div class="farmacia-card">
+              <a href="#" class="news-title">Vacinas</a>
+            </div>
+            <div class="farmacia-card">
+              <a href="#" class="news-title">Doenças Crônicas</a>
+            </div>
+            <div class="farmacia-info"><a href="#" class="news-title">Telemedicina</a></div>
+            <div class="farmacia-info">
+              <a href="#" class="news-title">Nutrição e Dietas</a>
+            </div>
+            <div class="farmacia-info">
+              <a href="#" class="news-title">Exercícios Físicos</a>
+            </div>
+            <div class="farmacia-info">
+              <a href="#" class="news-title">Cuidados com a Pele</a>
+            </div>
+            <div class="farmacia-info"><a href="#" class="news-title">Saúde Infantil</a></div>
+            <div class="farmacia-info"><a href="#" class="news-title">Saúde do Idoso</a></div>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <footer class="custom-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col footer-col-brand">
+            <h4 class="footer-title">Farma Fácil</h4>
+            <p>
+              Sua plataforma de informações sobre medicamentos e saúde.
+              Qualidade e confiabilidade ao seu alcance.
+            </p>
+          </div>
+          <div class="footer-col footer-col-contact">
+            <h4 class="footer-title">Contato</h4>
+            <p>
+              📧 Email:
+              <a href="mailto:contato@farmafacil.com.br" class="footer-link"
+                >contato@farmafacil.com.br</a
+              >
+            </p>
+            <p>📞 Telefone: (31) 99999-9999</p>
+          </div>
+          <div class="footer-col footer-col-location">
+            <h4 class="footer-title">Localização</h4>
+            <address class="footer-address">
+              📍 Rua da Farmácia, 123<br />
+              🏙️ Centro - Belo Horizonte, MG<br />
+              📮 CEP: 30000-000
+            </address>
+          </div>
+          <div class="footer-col footer-col-social">
+            <h4 class="footer-title">Siga-nos</h4>
+            <ul class="footer-social-list">
+              <li>
+                <a href="#" class="footer-link"
+                  ><img
+                    src="face.png"
+                    alt="Facebook"
+                    width="20"
+                    height="20"
+                  />Facebook
+                </a>
+              </li>
+              <li>
+                <a href="#" class="footer-link"
+                  ><img
+                    src="insta.png"
+                    alt="Instagram"
+                    width="20"
+                    height="20"
+                  />
+                  Instagram</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-link"
+                  ><img src="x.png" alt="X" width="20" height="20" /> X</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr class="footer-divider" />
+        <div class="footer-copy">
+          <p>&copy; 2025 Farma Fácil. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
